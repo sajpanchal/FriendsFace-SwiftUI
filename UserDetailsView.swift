@@ -11,8 +11,7 @@ struct UserDetailsView: View {
     @ObservedObject var users: Users
     @State var user: User
     var body: some View {
-        NavigationView {
-            Form {
+        Form {
                 Section(header:Text("Name")) {
                     Text("\(user.name)")
                 }
@@ -52,15 +51,13 @@ struct UserDetailsView: View {
                                 label: {
                                     Text(user.friends[index].name)
                                 })
-                            
                         }
                     }
                 }
-                
-            }
+        }.navigationBarTitle("User Details")
         }
     }
-}
+
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {

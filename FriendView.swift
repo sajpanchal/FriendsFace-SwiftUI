@@ -57,7 +57,7 @@ struct FriendView: View {
                     }
                 }
             }
-    }
+        }.navigationBarTitle("Friend Details")
     }
 }
 

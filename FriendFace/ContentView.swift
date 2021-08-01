@@ -25,7 +25,7 @@ struct ContentView: View {
                         
                     }
                 }
-            }
+            }.navigationBarTitle("FriendsFace")
          }.onAppear(perform: {
             userObject.users = fetchData()
          })
