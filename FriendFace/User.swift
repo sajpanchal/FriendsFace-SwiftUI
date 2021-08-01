@@ -16,6 +16,7 @@ struct User: Codable {
     var address: String
     var about: String
     var registered: String
+    var tags: [String]
     var friends: [Friend]
 }
 
