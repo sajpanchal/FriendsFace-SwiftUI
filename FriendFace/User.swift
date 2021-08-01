@@ -21,6 +21,6 @@ struct User: Codable {
 }
 
 class Users: ObservableObject {
-    @Published var users: [User]?
+    @Published var users: [User] = []
     
 }

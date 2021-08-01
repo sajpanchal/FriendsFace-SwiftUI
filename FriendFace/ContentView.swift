@@ -8,24 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var user: Users = Users()
-    @State var users: [User] = []
+    @ObservedObject var userObject: Users = Users()
+    @State var users = [User]()
+   
     var body: some View {
-        Group {
-            Text("Hello, world!")
-                .padding()
-            Button(action: {
-                fetchData()
-            }, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
-        }
+         NavigationView {
+            Form {
+               
+                List {
+                    ForEach(userObject.users, id: \.id) { user in
+                        NavigationLink(
+                            destination: UserDetailsView(users: userObject, user: user),
+                            label: {
+                                Text(user.name)
+                            })
+                        
+                    }
+                }
+            }
+         }.onAppear(perform: {
+            userObject.users = fetchData()
+         })
      
     }
-    func fetchData() {
+     func fetchData() -> [User] {
+       // var users: [User] = []
+        print("on appear")
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
             print("Invalid URL")
-            return
+            return []
         }
         let urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -33,9 +44,21 @@ struct ContentView: View {
             guard let data = data else {
                 return
             }
-            let decodedData = try? decoder.decode([User].self, from: data)
+            guard let decodedData = try? decoder.decode([User].self, from: data) else {
+            return
+            }
+            DispatchQueue.main.async {
+                self.userObject.users = decodedData
+                self.users = self.userObject.users
+                for user in self.users {
+                    print("users:",user.name)
+                }
+            }
+           
+           
             
         }.resume()
+        return users
     }
 }
 
