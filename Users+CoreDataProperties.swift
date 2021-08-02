@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension Users {
     
@@ -75,8 +75,10 @@ extension Users {
         
         set(newFriends) {
             var friendsArr: [Friends] = []
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
             for newFriend in newFriends {
-                let friend: Friends = FriendFace.Friends()
+                let friend: Friends = FriendFace.Friends(context: context)
                 friend.id = newFriend.id
                 friend.name = newFriend.name
                 

@@ -52,7 +52,7 @@ struct UserDetailsView: View {
                     List {
                         ForEach(0..<(fetchRequest.wrappedValue.first?.Friends.count)!) { index in
                             NavigationLink(
-                                destination: FriendView(predicate: "id == \((fetchRequest.wrappedValue.first?.Friends[index].id)!)"),
+                                destination: FriendView(predicate: "id == '\((fetchRequest.wrappedValue.first?.Friends[index].id)!)'"),
                                 label: {
                                     Text((fetchRequest.wrappedValue.first?.Friends[index].name)!)
                                 })

@@ -61,7 +61,7 @@ struct ContentView: View {
                     user.about = entry.about
                     user.registered = entry.registered
                     user.Tags = entry.tags
-                   // user.Friends = entry.friends
+                    user.Friends = entry.friends
                     do {
                         
                             try? self.moc.save()
@@ -70,7 +70,7 @@ struct ContentView: View {
                 }
                // self.users = self.userObject.users
                 for user in self.users {
-                    print("users:",user.Name)
+                    print("users:\(user.Name)",user.Friends)
                 }
             }
            
