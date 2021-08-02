@@ -20,7 +20,7 @@ struct User: Codable {
     var friends: [Friend]
 }
 
-class Users: ObservableObject {
+class UserCodable: ObservableObject {
     @Published var users: [User] = []
     
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7203852526B83C930069EE18 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7203852326B83C930069EE18 /* Model.xcdatamodeld */; };
+		7203853226B858BC0069EE18 /* Users+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203852E26B858BC0069EE18 /* Users+CoreDataClass.swift */; };
+		7203853326B858BC0069EE18 /* Users+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203852F26B858BC0069EE18 /* Users+CoreDataProperties.swift */; };
+		7203853426B858BC0069EE18 /* Friends+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203853026B858BC0069EE18 /* Friends+CoreDataClass.swift */; };
+		7203853526B858BC0069EE18 /* Friends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7203853126B858BC0069EE18 /* Friends+CoreDataProperties.swift */; };
 		724996E526B7002500E1955C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724996E426B7002500E1955C /* AppDelegate.swift */; };
 		724996E726B7002500E1955C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724996E626B7002500E1955C /* SceneDelegate.swift */; };
 		724996E926B7002500E1955C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724996E826B7002500E1955C /* ContentView.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7203852426B83C930069EE18 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7203852E26B858BC0069EE18 /* Users+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7203852F26B858BC0069EE18 /* Users+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Users+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7203853026B858BC0069EE18 /* Friends+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7203853126B858BC0069EE18 /* Friends+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		724996E126B7002500E1955C /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		724996E426B7002500E1955C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		724996E626B7002500E1955C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +58,11 @@
 		724996D826B7002500E1955C = {
 			isa = PBXGroup;
 			children = (
+				7203852E26B858BC0069EE18 /* Users+CoreDataClass.swift */,
+				7203852F26B858BC0069EE18 /* Users+CoreDataProperties.swift */,
+				7203853026B858BC0069EE18 /* Friends+CoreDataClass.swift */,
+				7203853126B858BC0069EE18 /* Friends+CoreDataProperties.swift */,
+				7203852326B83C930069EE18 /* Model.xcdatamodeld */,
 				72602EB526B7446C004588BD /* UserDetailsView.swift */,
 				72602EB726B74A9C004588BD /* FriendView.swift */,
 				724996E326B7002500E1955C /* FriendFace */,
@@ -160,10 +175,15 @@
 				72602EB826B74A9C004588BD /* FriendView.swift in Sources */,
 				724996F926B7022300E1955C /* User.swift in Sources */,
 				724996E526B7002500E1955C /* AppDelegate.swift in Sources */,
+				7203852526B83C930069EE18 /* Model.xcdatamodeld in Sources */,
+				7203853326B858BC0069EE18 /* Users+CoreDataProperties.swift in Sources */,
 				724996FB26B7029500E1955C /* Friend.swift in Sources */,
+				7203853526B858BC0069EE18 /* Friends+CoreDataProperties.swift in Sources */,
 				724996E726B7002500E1955C /* SceneDelegate.swift in Sources */,
 				72602EB626B7446C004588BD /* UserDetailsView.swift in Sources */,
+				7203853426B858BC0069EE18 /* Friends+CoreDataClass.swift in Sources */,
 				724996E926B7002500E1955C /* ContentView.swift in Sources */,
+				7203853226B858BC0069EE18 /* Users+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +381,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7203852326B83C930069EE18 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7203852426B83C930069EE18 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7203852426B83C930069EE18 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 724996D926B7002500E1955C /* Project object */;
 }

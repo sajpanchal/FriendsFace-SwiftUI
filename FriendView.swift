@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct FriendView: View {
-    @ObservedObject var users: Users
-    @State var userId: String
-    var user: User {
+    @Environment(\.managedObjectContext) var moc
+    var fetchRequest: FetchRequest<Users>
+    init(predicate: String) {
+        fetchRequest = FetchRequest<Users>(entity: Users.entity(), sortDescriptors: [], predicate: NSPredicate(format: "\(predicate)"), animation: nil)
+    }
+   /* var user: User {
         var myUser: User?
         for user in users.users {
             if user.id == userId {
@@ -23,37 +26,37 @@ struct FriendView: View {
         }
         return myUser!
         
-    }
+    }*/
     var body: some View {
         Form {
             Section(header:Text("Name")) {
-                Text("\(user.name)")
+                Text("\(fetchRequest.wrappedValue.first!.Name)")
             }
             Section(header: Text("Age")) {
-                Text("\(user.age)")
+                Text("\(fetchRequest.wrappedValue.first!.age)")
             }
             Section(header: Text("isActive")) {
-                Text("\(String(user.isActive))")
+                Text("\(String(fetchRequest.wrappedValue.first!.isActive))")
             }
             Section(header: Text("Company")) {
-                Text("\(user.company)")
+                Text("\(fetchRequest.wrappedValue.first!.Company)")
             }
             Section(header: Text("E-mail")) {
-                Text("\(user.email)")
+                Text("\(fetchRequest.wrappedValue.first!.Email)")
             }
             Section(header: Text("Address")) {
-                Text("\(user.address)")
+                Text("\(fetchRequest.wrappedValue.first!.Address)")
             }
             Section(header: Text("About")) {
-                Text("\(user.about)")
+                Text("\(fetchRequest.wrappedValue.first!.About)")
             }
             Section(header: Text("Registration Date")) {
-                Text("\(user.registered)")
+                Text("\(fetchRequest.wrappedValue.first!.Registered)")
             }
             Section(header: Text("Tags")) {
                 List {
-                    ForEach(0..<user.tags.count) { index in
-                        Text(user.tags[index])
+                    ForEach(0..<fetchRequest.wrappedValue.first!.Tags.count) { index in
+                        Text(fetchRequest.wrappedValue.first!.Tags[index])
                     }
                 }
             }
@@ -63,7 +66,7 @@ struct FriendView: View {
 
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendView(users: Users(), userId: "")
+        FriendView(predicate: "")
     }
 }
 
