@@ -60,15 +60,19 @@ extension Users {
     var Friends: [Friend] {
         
         get {
-            
             let friendSet = friends as? Set<Friends> ?? []
             let friends = friendSet.sorted {
-                $0.Name < $1.Name
+               // print($0.Name, $1.Name)
+                return  ($0.Name < $1.Name)
             }
             var friendsStruct: [Friend] = []
             for friend in friends {
+               
                 let friendStruct = Friend(id: friend.Id, name: friend.Name)
                 friendsStruct.append(friendStruct)
+            }
+            for x in friendsStruct {
+               
             }
             return friendsStruct
         }
@@ -81,7 +85,6 @@ extension Users {
                 let friend: Friends = FriendFace.Friends(context: context)
                 friend.id = newFriend.id
                 friend.name = newFriend.name
-                
                 friendsArr.append(friend)
             }
             let set = Set(friendsArr)
